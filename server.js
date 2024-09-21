@@ -4,25 +4,36 @@ const path = require("path");
 const cors = require("cors");
 
 const app = express();
-const PORT = process.env.PORT || 3000; // Dynamic port for deployment environments
+const PORT = process.env.PORT || 3000;
 
 app.use(
   cors({
-    origin: "*", // Allow all origins for testing purposes
-    methods: ["GET", "POST", "PUT", "DELETE"], // Define allowed HTTP methods
-    allowedHeaders: ["Content-Type", "Authorization"], // Define allowed headers
+    origin: "*",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
-app.use(express.json()); // You no longer need body-parser in modern Express versions
+app.use(express.json());
+
+let data;
+let cartData;
 
 // Read cat.json
-let data;
 try {
   const filePath = path.join(__dirname, "cat.json");
   data = JSON.parse(fs.readFileSync(filePath, "utf8"));
 } catch (error) {
   console.error("Error reading cat.json:", error);
-  process.exit(1); // Exit if data can't be loaded
+  process.exit(1);
+}
+
+// Read cart.json
+try {
+  const cartPath = path.join(__dirname, "cart.json");
+  cartData = JSON.parse(fs.readFileSync(cartPath, "utf8"));
+} catch (error) {
+  console.error("Error reading cart.json:", error);
+  process.exit(1);
 }
 
 // 1. Get all categories
@@ -38,7 +49,6 @@ app.get("/categories", (req, res) => {
 app.get("/products/:cat_id", (req, res) => {
   const cat_id = parseInt(req.params.cat_id);
   const category = data.categories.find((cat) => cat.cat_id === cat_id);
-
   if (category) {
     res.json({ category });
   } else {
@@ -64,6 +74,57 @@ app.get("/product/:product_id", (req, res) => {
     res.json({ product: foundProduct });
   } else {
     res.status(404).json({ message: "Product not found" });
+  }
+});
+
+// 4. Add item to cart
+app.post("/cart/add", (req, res) => {
+  const { product_id, quantity } = req.body;
+
+  const product = data.categories
+    .flatMap((category) => category.items)
+    .find((item) => item.product_id === product_id);
+
+  if (product) {
+    const cartItem = { ...product, quantity: quantity || 1 };
+    cartData.items.push(cartItem);
+
+    fs.writeFileSync(
+      path.join(__dirname, "cart.json"),
+      JSON.stringify(cartData, null, 2)
+    );
+    res.status(201).json({ message: "Item added to cart", cartItem });
+  } else {
+    res.status(404).json({ message: "Product not found" });
+  }
+});
+
+// 5. Delete item from cart
+app.delete("/cart/remove/:product_id", (req, res) => {
+  const product_id = parseInt(req.params.product_id);
+  const initialLength = cartData.items.length;
+
+  cartData.items = cartData.items.filter(
+    (item) => item.product_id !== product_id
+  );
+
+  if (cartData.items.length < initialLength) {
+    fs.writeFileSync(
+      path.join(__dirname, "cart.json"),
+      JSON.stringify(cartData, null, 2)
+    );
+    res.json({ message: "Item removed from cart" });
+  } else {
+    res.status(404).json({ message: "Product not found in cart" });
+  }
+});
+
+// Get all cart items
+app.get("/cart", (req, res) => {
+  if (cartData && cartData.items) {
+    res.json({ items: cartData.items });
+  } else {
+    res.status(500).json({ message: "Cart data not available" });
   }
 });
 

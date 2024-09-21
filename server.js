@@ -6,7 +6,13 @@ const cors = require("cors");
 const app = express();
 const PORT = process.env.PORT || 3000; // Dynamic port for deployment environments
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "*", // Allow all origins for testing purposes
+    methods: ["GET", "POST", "PUT", "DELETE"], // Define allowed HTTP methods
+    allowedHeaders: ["Content-Type", "Authorization"], // Define allowed headers
+  })
+);
 app.use(express.json()); // You no longer need body-parser in modern Express versions
 
 // Read cat.json

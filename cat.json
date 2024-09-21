@@ -1,0 +1,186 @@
+{
+  "categories": [
+    {
+      "cat_id": 1,
+      "name": "Electronics",
+      "img": "https://res.cloudinary.com/dj7m5tuv9/image/upload/v1696871939/project%20data/images/electric/electic.jpg",
+      "items": [
+        {
+          "product_id": 101,
+          "name": "Smartphone",
+          "price": 699.99,
+          "description": "Latest 5G smartphone with high-resolution display and fast performance.",
+          "img": "https://res.cloudinary.com/dj7m5tuv9/image/upload/v1696871903/project%20data/images/digital/mobile.jpg"
+        },
+        {
+          "product_id": 102,
+          "name": "Laptop",
+          "price": 999.99,
+          "description": "High-performance laptop for gaming and work.",
+          "img": "https://res.cloudinary.com/dj7m5tuv9/image/upload/v1696871903/project%20data/images/digital/laptop.jpg"
+        },
+        {
+          "product_id": 10,
+          "name": "Washing Machine",
+          "price": 100,
+          "description": "High-performance Washing Machine.",
+          "img": "https://res.cloudinary.com/dj7m5tuv9/image/upload/v1696871939/project%20data/images/electric/washing-machine.jpg"
+        },
+        {
+          "product_id": 11,
+          "name": "Refrigerator",
+          "price": 200,
+          "description": "Energy-efficient refrigerator with large capacity.",
+          "img": "https://res.cloudinary.com/dj7m5tuv9/image/upload/v1696871938/project%20data/images/electric/fridge.jpg"
+        },
+        {
+          "product_id": 12,
+          "name": "Blender",
+          "price": 100,
+          "description": "Efficient kitchen blender for daily use.",
+          "img": "https://res.cloudinary.com/dj7m5tuv9/image/upload/v1696871938/project%20data/images/electric/blender.jpg"
+        }
+      ]
+    },
+    {
+      "cat_id": 2,
+      "name": "Fruits",
+      "img": "https://res.cloudinary.com/dj7m5tuv9/image/upload/v1696871968/project%20data/images/fruits/fruits.jpg",
+      "items": [
+        {
+          "product_id": 301,
+          "name": "Apple",
+          "price": 599.99,
+          "description": "Fresh and juicy apples.",
+          "img": "https://res.cloudinary.com/dj7m5tuv9/image/upload/v1696871968/project%20data/images/fruits/apple.jpg"
+        },
+        {
+          "product_id": 2,
+          "name": "Banana",
+          "price": 200,
+          "description": "Fresh bananas rich in potassium.",
+          "img": "https://res.cloudinary.com/dj7m5tuv9/image/upload/v1696871973/project%20data/images/fruits/banana.jpg"
+        },
+        {
+          "product_id": 3,
+          "name": "Grapes",
+          "price": 100,
+          "description": "Sweet and juicy grapes.",
+          "img": "https://res.cloudinary.com/dj7m5tuv9/image/upload/v1696871969/project%20data/images/fruits/grapes.jpg"
+        }
+      ]
+    },
+    {
+      "cat_id": 3,
+      "name": "Vegetables",
+      "img": "https://res.cloudinary.com/dj7m5tuv9/image/upload/v1696872063/project%20data/images/vegetables/vegetable.jpg",
+      "items": [
+        {
+          "product_id": 4,
+          "name": "Potato",
+          "price": 100,
+          "description": "Fresh potatoes for daily cooking.",
+          "img": "https://res.cloudinary.com/dj7m5tuv9/image/upload/v1696872075/project%20data/images/vegetables/potato.png"
+        },
+        {
+          "product_id": 5,
+          "name": "Tomato",
+          "price": 200,
+          "description": "Fresh and ripe tomatoes.",
+          "img": "https://res.cloudinary.com/dj7m5tuv9/image/upload/v1696872062/project%20data/images/vegetables/tomato.jpg"
+        },
+        {
+          "product_id": 6,
+          "name": "Onion",
+          "price": 200,
+          "description": "Fresh onions for cooking.",
+          "img": "https://res.cloudinary.com/dj7m5tuv9/image/upload/v1696872063/project%20data/images/vegetables/onion.jpg"
+        }
+      ]
+    },
+    {
+      "cat_id": 4,
+      "name": "Cloths",
+      "img": "https://res.cloudinary.com/dj7m5tuv9/image/upload/v1696871669/project%20data/images/cloths/cloths.jpg",
+      "items": [
+        {
+          "product_id": 7,
+          "name": "Shirt",
+          "price": 100,
+          "description": "Comfortable cotton shirt.",
+          "img": "https://res.cloudinary.com/dj7m5tuv9/image/upload/v1696871667/project%20data/images/cloths/shirt.jpg"
+        },
+        {
+          "product_id": 8,
+          "name": "T-Shirt",
+          "price": 200,
+          "description": "Casual t-shirt for daily wear.",
+          "img": "https://res.cloudinary.com/dj7m5tuv9/image/upload/v1696871667/project%20data/images/cloths/tshirt.jpg"
+        },
+        {
+          "product_id": 9,
+          "name": "Jeans",
+          "price": 200,
+          "description": "Stylish denim jeans.",
+          "img": "https://res.cloudinary.com/dj7m5tuv9/image/upload/v1696871667/project%20data/images/cloths/jeans.jpg"
+        }
+      ]
+    },
+    {
+      "cat_id": 5,
+      "name": "Digital",
+      "img": "https://res.cloudinary.com/dj7m5tuv9/image/upload/v1696871903/project%20data/images/digital/digital.jpg",
+      "items": [
+        {
+          "product_id": 13,
+          "name": "Laptop",
+          "price": 100,
+          "description": "Affordable laptop for digital work.",
+          "img": "https://res.cloudinary.com/dj7m5tuv9/image/upload/v1696871903/project%20data/images/digital/laptop.jpg"
+        },
+        {
+          "product_id": 14,
+          "name": "Mobile",
+          "price": 200,
+          "description": "Affordable smartphone with great features.",
+          "img": "https://res.cloudinary.com/dj7m5tuv9/image/upload/v1696871903/project%20data/images/digital/mobile.jpg"
+        },
+        {
+          "product_id": 15,
+          "name": "Tablet",
+          "price": 100,
+          "description": "Portable tablet for browsing and work.",
+          "img": "https://res.cloudinary.com/dj7m5tuv9/image/upload/v1696871903/project%20data/images/digital/tablet.jpg"
+        }
+      ]
+    },
+    {
+      "cat_id": 6,
+      "name": "Sports",
+      "img": "https://res.cloudinary.com/dj7m5tuv9/image/upload/v1696872005/project%20data/images/sports/sports.jpg",
+      "items": [
+        {
+          "product_id": 16,
+          "name": "Bat and Ball",
+          "price": 100,
+          "description": "Sports kit for cricket lovers.",
+          "img": "https://res.cloudinary.com/dj7m5tuv9/image/upload/v1696872003/project%20data/images/sports/bat-ball.jpg"
+        },
+        {
+          "product_id": 17,
+          "name": "Badminton",
+          "price": 200,
+          "description": "Badminton kit for sports enthusiasts.",
+          "img": "https://res.cloudinary.com/dj7m5tuv9/image/upload/v1696872020/project%20data/images/sports/badminton.jpg"
+        },
+        {
+          "product_id": 18,
+          "name": "Football",
+          "price": 100,
+          "description": "Durable football for outdoor play.",
+          "img": "https://res.cloudinary.com/dj7m5tuv9/image/upload/v1696872006/project%20data/images/sports/football.jpg"
+        }
+      ]
+    }
+  ]
+}
